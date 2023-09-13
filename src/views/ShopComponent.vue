@@ -1,0 +1,85 @@
+<script>
+import ShopItem from './ShopItem.vue';
+export default {
+  name: 'ShopComponent',
+  components: {
+    ShopItem,
+  },
+  data() {
+    return {
+      dataTitle: 'wheat',
+      products: [
+        {
+          name: 'Злаки',
+          dataTitle: 'wheat',
+          src: require('../assets/icons/warehouses/wheat.svg'),
+          id: 1,
+        },
+        {
+          name: 'Виноград',
+          dataTitle: 'grape',
+          src: require('../assets/icons/warehouses/grape.svg'),
+          id: 2,
+        },
+        {
+          name: 'Вишня',
+          dataTitle: 'cherry',
+          src: require('../assets/icons/warehouses/cherry.svg'),
+          id: 3,
+        },
+        {
+          name: 'Техника',
+          dataTitle: 'technique',
+          src: require('../assets/icons/warehouses/technique.svg'),
+          id: 4,
+        },
+      ],
+    };
+  },
+  methods: {
+    showShopItem(data){
+      this.dataTitle = data
+    }
+  }
+};
+</script>
+
+<template>
+  <section class="game-field">
+    <div class="container">
+      <div class="row justify-content-center row-padding">
+        <div class="col-sm-10 game-field__field-main">
+          <div class="shop">
+            <aside class="asidebar">
+              <nav>
+                <ul class="asidebar__menu">
+                  <li v-for="product of products" :key="product.id" @click="showShopItem(product.dataTitle)">
+                    <a class="asidebar__link" :data-title="product.name">
+                      <img :src="product.src" alt="wheat" />
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+            </aside>
+            <div class="container">
+              <div class="row shop__scroll scroll-bar">
+                <div class="shop__wrapper" v-if="dataTitle === 'wheat'">
+                    <shop-item v-for="item of 10" :key="item"></shop-item>
+                </div>
+                <div class="shop__wrapper">
+                    <h4>Тут пока ничего нет</h4>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</template>
+
+<style scoped>
+a {
+  cursor: pointer;
+}
+</style>
