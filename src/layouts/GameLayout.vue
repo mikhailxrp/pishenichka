@@ -28,7 +28,7 @@ export default {
     toggleField(data){
        this.activeFieldItem = data
     }
-  },  
+  }, 
 };
 </script>
 

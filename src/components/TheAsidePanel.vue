@@ -1,28 +1,28 @@
 <script>
 export default {
   name: 'TheAsidePanel',
-  components: {
-  },
-  data(){
-    return{
-      itemPanel: 'registry',  
-      active: true
-    }
+  components: {},
+  data() {
+    return {
+      itemPanel: 'registry',
+      active: true,
+    };
   },
   methods: {
-    toggleItemPanel(event){
-      let nameElem = event.closest('[data-value]')
-      this.itemPanel = nameElem.dataset.value
-      this.$emit('activeItemPanel', this.itemPanel) 
-    }
-  }
+    toggleItemPanel(event) {
+      let nameElem = event.closest('[data-value]');
+      this.itemPanel = nameElem.dataset.value;
+      this.$emit('activeItemPanel', this.itemPanel);
+    },
+  },
 };
 </script>
 
 <template>
   <div class="asidepanel">
     <div class="asidepanel__wrapper">
-      <div :class="{asidepanel__item: true, asidepanel__item_active: active ? itemPanel === 'registry' : false}" 
+      <div
+        :class="{ asidepanel__item: true, asidepanel__item_active: active ? itemPanel === 'registry' : false }"
         @click="toggleItemPanel($event.target)"
         data-value="registry"
       >
@@ -38,7 +38,8 @@ export default {
         </div>
       </div>
 
-      <div :class="{asidepanel__item: true, asidepanel__item_active: active ? itemPanel === 'agriculture' : false}" 
+      <div
+        :class="{ asidepanel__item: true, asidepanel__item_active: active ? itemPanel === 'agriculture' : false }"
         @click="toggleItemPanel($event.target)"
         data-value="agriculture"
       >
@@ -54,7 +55,8 @@ export default {
         </div>
       </div>
 
-      <div :class="{asidepanel__item: true, asidepanel__item_active: active ? itemPanel === 'technique' : false}"
+      <div
+        :class="{ asidepanel__item: true, asidepanel__item_active: active ? itemPanel === 'technique' : false }"
         @click="toggleItemPanel($event.target)"
         data-value="technique"
       >
@@ -71,7 +73,8 @@ export default {
         </div>
       </div>
 
-      <div :class="{asidepanel__item: true, asidepanel__item_active: active ? itemPanel === 'warehouses' : false}"
+      <div
+        :class="{ asidepanel__item: true, asidepanel__item_active: active ? itemPanel === 'warehouses' : false }"
         @click="toggleItemPanel($event.target)"
         data-value="warehouses"
       >
@@ -88,7 +91,8 @@ export default {
         </div>
       </div>
 
-      <div :class="{asidepanel__item: true, asidepanel__item_active: active ? itemPanel === 'production' : false}"
+      <div
+        :class="{ asidepanel__item: true, asidepanel__item_active: active ? itemPanel === 'production' : false }"
         @click="toggleItemPanel($event.target)"
         data-value="production"
       >
@@ -105,9 +109,10 @@ export default {
         </div>
       </div>
 
-      <div :class="{asidepanel__item: true, asidepanel__item_active: active ? itemPanel === 'shop' : false}"
-         @click="toggleItemPanel($event.target)"
-         data-value="shop"
+      <div
+        :class="{ asidepanel__item: true, asidepanel__item_active: active ? itemPanel === 'shop' : false }"
+        @click="toggleItemPanel($event.target)"
+        data-value="shop"
       >
         <div class="asidepanel__content">Магазин</div>
         <div class="asidepanel__circle" data-title="Магазин">
@@ -123,5 +128,11 @@ export default {
       </div>
     </div>
   </div>
- 
 </template>
+
+<style scoped>
+.asidepanel__img img {
+  clip-path: url('#registry');
+  fill: red;
+}
+</style>

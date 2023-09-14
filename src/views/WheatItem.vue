@@ -1,11 +1,11 @@
 <script>
 export default {
-  name: 'ShopItem',
+  name: 'WheatItem',
 };
 </script>
 
 <template>
-  <div class="shop__item">
+  <div class="shop__item" v-for="item of 5" :key="item">
     <div class="shop__item-name">Пшеница</div>
     <div class="shop__item-img-info" data-title="информация с сервера">
       <img src="../assets/icons/info.svg" alt="info" />

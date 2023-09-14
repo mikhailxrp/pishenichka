@@ -1,9 +1,9 @@
 <script>
-import ShopItem from './ShopItem.vue';
+import WheatItem from './WheatItem.vue';
 export default {
   name: 'ShopComponent',
   components: {
-    ShopItem,
+    WheatItem,
   },
   data() {
     return {
@@ -40,7 +40,7 @@ export default {
     showShopItem(data){
       this.dataTitle = data
     }
-  }
+  },
 };
 </script>
 
@@ -63,12 +63,11 @@ export default {
             </aside>
             <div class="container">
               <div class="row shop__scroll scroll-bar">
-                <div class="shop__wrapper" v-if="dataTitle === 'wheat'">
-                    <shop-item v-for="item of 10" :key="item"></shop-item>
+                <div class="shop__wrapper" >
+                    <wheat-item v-if="dataTitle === 'wheat'"></wheat-item>
+                    <h4 v-else>Тут пока ничего нет</h4>
                 </div>
-                <div class="shop__wrapper">
-                    <h4>Тут пока ничего нет</h4>
-                </div>
+                
               </div>
             </div>
           </div>
