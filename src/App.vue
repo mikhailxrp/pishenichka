@@ -16,9 +16,6 @@ export default {
   // },
   provide() {
     return {
-      isAuth: this.isAuth,
-      login: this.login,
-      password: this.password,
       loginGame: this.loginGame,
       outGame: this.outGame,
     };
