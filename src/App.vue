@@ -7,13 +7,13 @@ export default {
     AuthLayout,
     GameLayout,
   },
-  data() {
-    return {
-      isAuth: false,
-      login: 'admin',
-      password: 'admin'
-    };
-  },
+  // data() {
+  //   return {
+  //     isAuth: false,
+  //     login: 'admin',
+  //     password: 'admin'
+  //   };
+  // },
   provide() {
     return {
       isAuth: this.isAuth,

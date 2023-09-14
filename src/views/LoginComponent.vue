@@ -1,7 +1,8 @@
 <script>
+import { mapState } from 'vuex';
 export default {
   name: 'LoginComponent',
-  inject: ['loginGame', 'login', 'password', 'isAuth'],
+  inject: ['loginGame', ],
   data() {
     return {
       loginName: '',
@@ -18,9 +19,13 @@ export default {
     },
   },
   computed: {
-    isValid() {
-      this.isAuth = this.loginName === this.login && this.pass === this.password;
-      return this.isAuth
+    ...mapState(['login', 'password']),
+    isValid() { 
+      if(this.loginName === this.login && this.pass === this.password){
+        return true
+      }else {
+        return false
+      }
     },
   },
 };
