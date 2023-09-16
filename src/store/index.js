@@ -1,16 +1,19 @@
-import { createStore } from "vuex";
+import { createStore } from 'vuex';
 
 export default createStore({
-  state(){
+  state() {
     return {
-      isAuth: false,
-      login: 'admin',
-      password: 'admin',
+      isLogin: false,
+      login: '',
+      password: '',
     };
   },
   getters: {
-    isAuth(state){
-      return state.isAuth
-    }
-  }
-})
+    isAuth(state) {
+      if (state.login === 'admin' && state.password === 'admin') {
+        state.isLogin = true;
+        return state.isLogin;
+      }
+    },
+  },
+});

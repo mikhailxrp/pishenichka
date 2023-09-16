@@ -1,32 +1,18 @@
 <script>
-import { mapState } from 'vuex';
+import { mapGetters } from 'vuex';
 export default {
   name: 'LoginComponent',
-  inject: ['loginGame', ],
-  data() {
-    return {
-      loginName: '',
-      pass: '',
-    };
-  },
   methods: {
     submit() {
-      if (this.isValid) {
+      if(this.isAuth){
         this.$router.push('/game');
-      }
-      this.loginName = '';
-      this.pass = '';
+      }        
+      this.$store.state.login = ''
+      this.$store.state.password = ''
     },
   },
   computed: {
-    ...mapState(['login', 'password']),
-    isValid() { 
-      if(this.loginName === this.login && this.pass === this.password){
-        return true
-      }else {
-        return false
-      }
-    },
+    ...mapGetters(['isAuth']),
   },
 };
 </script>
@@ -42,11 +28,11 @@ export default {
           <form action="#" class="form-auth form-login">
             <div class="form-auth__label">
               <label for="login">Введите Ваш логин</label>
-              <input type="text" id="login" v-model="loginName" />
+              <input type="text" id="login" v-model="$store.state.login" />
             </div>
             <div class="form-auth__label">
               <label for="password">Введите Ваш пароль</label>
-              <input type="text" id="password" v-model="pass" />
+              <input type="text" id="password" v-model="$store.state.password" />
             </div>
             <button class="btn btn_login" @click.prevent="submit">В игру</button>
           </form>
