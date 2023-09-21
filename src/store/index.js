@@ -1,6 +1,10 @@
 import { createStore } from 'vuex';
+import shopTabModule from './modules/menuTabShop';
 
 export default createStore({
+modules: {
+    shopTabModule
+  },
   state() {
     return {
       isLogin: false,
@@ -10,7 +14,7 @@ export default createStore({
   },
   getters: {
     isAuth(state) {
-      if (state.login === 'admin' && state.password === 'admin') {
+      if (state.login !== '' && state.password !== '') {
         state.isLogin = true;
         return state.isLogin;
       }

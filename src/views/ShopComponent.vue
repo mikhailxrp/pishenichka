@@ -1,5 +1,6 @@
 <script>
 import WheatItem from './WheatItem.vue';
+import {mapGetters} from 'vuex'
 export default {
   name: 'ShopComponent',
   components: {
@@ -8,32 +9,6 @@ export default {
   data() {
     return {
       dataTitle: 'wheat',
-      products: [
-        {
-          name: 'Злаки',
-          dataTitle: 'wheat',
-          src: require('../assets/icons/warehouses/wheat.svg'),
-          id: 1,
-        },
-        {
-          name: 'Виноград',
-          dataTitle: 'grape',
-          src: require('../assets/icons/warehouses/grape.svg'),
-          id: 2,
-        },
-        {
-          name: 'Вишня',
-          dataTitle: 'cherry',
-          src: require('../assets/icons/warehouses/cherry.svg'),
-          id: 3,
-        },
-        {
-          name: 'Техника',
-          dataTitle: 'technique',
-          src: require('../assets/icons/warehouses/technique.svg'),
-          id: 4,
-        },
-      ],
     };
   },
   methods: {
@@ -41,6 +16,9 @@ export default {
       this.dataTitle = data
     }
   },
+  computed: {
+    ...mapGetters(['asideMenu'])
+  }
 };
 </script>
 
@@ -53,7 +31,7 @@ export default {
             <aside class="asidebar">
               <nav>
                 <ul class="asidebar__menu">
-                  <li v-for="product of products" :key="product.id" @click="showShopItem(product.dataTitle)">
+                  <li v-for="product of asideMenu" :key="product.id" @click="showShopItem(product.dataTitle)">
                     <a class="asidebar__link" :data-title="product.name">
                       <img :src="product.src" alt="wheat" />
                     </a>
