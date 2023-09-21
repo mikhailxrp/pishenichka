@@ -8,7 +8,7 @@ export default {
   data() {
     return {
       dataTitle: 'wheat',
-      products: [
+      shopProducts: [
         {
           name: 'Злаки',
           dataTitle: 'wheat',
@@ -53,7 +53,7 @@ export default {
             <aside class="asidebar">
               <nav>
                 <ul class="asidebar__menu">
-                  <li v-for="product of products" :key="product.id" @click="showShopItem(product.dataTitle)">
+                  <li v-for="product of shopProducts" :key="product.id" @click="showShopItem(product.dataTitle)">
                     <a class="asidebar__link" :data-title="product.name">
                       <img :src="product.src" alt="wheat" />
                     </a>

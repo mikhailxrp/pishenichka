@@ -10,7 +10,7 @@ export default createStore({
   },
   getters: {
     isAuth(state) {
-      if (state.login === 'admin' && state.password === 'admin') {
+      if (state.login !== '' && state.password !== '') {
         state.isLogin = true;
         return state.isLogin;
       }

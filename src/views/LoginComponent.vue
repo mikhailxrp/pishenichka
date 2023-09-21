@@ -1,5 +1,6 @@
 <script>
 import { mapGetters } from 'vuex';
+
 export default {
   name: 'LoginComponent',
   methods: {
@@ -7,8 +8,8 @@ export default {
       if(this.isAuth){
         this.$router.push('/game');
       }        
-      this.$store.state.login = ''
-      this.$store.state.password = ''
+      this.login = ''
+      this.password = ''
     },
   },
   computed: {
