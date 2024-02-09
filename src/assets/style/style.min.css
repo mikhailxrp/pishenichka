@@ -50,10 +50,16 @@
   --bs-black-rgb: 0, 0, 0;
   --bs-body-color-rgb: 33, 37, 41;
   --bs-body-bg-rgb: 255, 255, 255;
-  --bs-font-sans-serif: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
-    'Liberation Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-  --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
-  --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
+  --bs-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+  --bs-gradient: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.15),
+    rgba(255, 255, 255, 0)
+  );
   --bs-body-font-family: var(--bs-font-sans-serif);
   --bs-body-font-size: 1rem;
   --bs-body-font-weight: 400;
@@ -3994,7 +4000,7 @@ input::-ms-clear {
   display: none;
 }
 button,
-input[type='submit'] {
+input[type="submit"] {
   display: inline-block;
   box-shadow: none;
   background-color: transparent;
@@ -4036,7 +4042,7 @@ legend {
   --container-padding: 15px;
 }
 body {
-  font-family: Yomogi, 'Rock Salt', Comfortaa, sans-serif;
+  font-family: Yomogi, "Rock Salt", Comfortaa, sans-serif;
   font-weight: 400;
   font-size: 20px;
   color: #0f1f1c;
@@ -4122,7 +4128,7 @@ body {
   opacity: 0;
 }
 .btn_play::after {
-  content: '';
+  content: "";
   display: inline-block;
   height: 100%;
   width: 100%;
@@ -4204,7 +4210,7 @@ body {
   position: absolute;
   left: -10px;
   bottom: 12px;
-  content: '';
+  content: "";
   width: 2px;
   height: 30px;
   background-color: #575757;
@@ -4214,7 +4220,7 @@ body {
   position: absolute;
   left: -10px;
   bottom: -8px;
-  content: '';
+  content: "";
   width: 2px;
   height: 30px;
   background-color: #575757;
@@ -4371,7 +4377,7 @@ body {
   top: 12px;
   left: 15px;
   transform: rotate(-45deg);
-  content: '';
+  content: "";
   width: 17px;
   height: 2px;
   background-color: #fff;
@@ -4381,7 +4387,7 @@ body {
   bottom: 10px;
   left: 15px;
   transform: rotate(45deg);
-  content: '';
+  content: "";
   width: 17px;
   height: 2px;
   background-color: #fff;
@@ -4466,7 +4472,7 @@ body {
 }
 .btn-minus::before {
   position: absolute;
-  content: '';
+  content: "";
   width: 15px;
   height: 2px;
   background-color: #575757;
@@ -4487,14 +4493,14 @@ body {
 }
 .btn-plus::before {
   position: absolute;
-  content: '';
+  content: "";
   width: 15px;
   height: 2px;
   background-color: #575757;
 }
 .btn-plus::after {
   position: absolute;
-  content: '';
+  content: "";
   width: 2px;
   height: 15px;
   background-color: #575757;
@@ -4518,7 +4524,7 @@ body {
   padding-bottom: 90px;
   width: 100%;
   /* height: 100%; */
-  background-image: url('../img/auth-bg.png');
+  background-image: url("../img/auth-bg.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 0 0;
@@ -4530,7 +4536,7 @@ body {
   bottom: 0; */
   width: 100%;
   height: auto;
-  background-image: url('../img/game-layout-bg.jpg');
+  background-image: url("../img/game-layout-bg.jpg");
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -4570,6 +4576,7 @@ body {
   height: 50px;
   border: 2px solid #fff;
   border-radius: 50%;
+  flex-shrink: 0;
 }
 .asidepanel__circle:hover::after {
   position: absolute;
@@ -4753,7 +4760,7 @@ body {
   align-items: center;
   width: 50px;
   height: 50px;
-  font-family: 'Rock Salt';
+  font-family: "Rock Salt";
   font-size: 15px;
   border: 1.5px solid #000;
   border-radius: 50%;
@@ -4762,7 +4769,7 @@ body {
 .about-project__label-item::after {
   position: absolute;
   bottom: -187px;
-  content: '';
+  content: "";
   width: 2px;
   height: 395%;
   background-color: #000;
@@ -5572,7 +5579,7 @@ body {
 .counter__amount {
   width: 58px;
   text-align: center;
-  font-family: 'Rock Salt';
+  font-family: "Rock Salt";
   font-size: 14px;
   line-height: 20px;
   color: #575757;
@@ -5991,7 +5998,7 @@ body {
   top: 37px;
   left: 50%;
   transform: translateX(-50%);
-  content: '';
+  content: "";
   width: 80px;
   height: 78px;
   border: 2px solid #575757;
@@ -6023,7 +6030,7 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  content: '';
+  content: "";
   width: 28px;
   height: 2px;
   background-color: #575757;
@@ -6033,7 +6040,7 @@ body {
   position: absolute;
   top: 20px;
   left: 0;
-  content: '';
+  content: "";
   width: 28px;
   height: 2px;
   background-color: #575757;
@@ -6055,7 +6062,7 @@ body {
   position: absolute;
   top: 0;
   right: 0;
-  content: '';
+  content: "";
   width: 28px;
   height: 2px;
   background-color: #575757;
@@ -6065,7 +6072,7 @@ body {
   position: absolute;
   top: 20px;
   right: 0;
-  content: '';
+  content: "";
   width: 28px;
   height: 2px;
   background-color: #575757;
